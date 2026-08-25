@@ -6,173 +6,238 @@
 
 # 1. Project Overview
 
-This project is a hands-on Linux administration and operations environment designed to simulate a small enterprise infrastructure.
-
-The project combines Windows Server, RHEL Linux, and Ubuntu Linux and covers infrastructure configuration, domain integration, web services, Linux administration, security, automation, monitoring, logging, backup, restore, and scheduled operations.
-
-The project follows this lifecycle:
-
-Infrastructure → Domain Integration → Web Services → Linux Administration → Security → Monitoring → Automation → Logging → Backup & Restore → Operations
+[الجزء اللي كتبته بالفعل]
 
 ---
-# 5. Task 1 — Infrastructure & Domain Integration
-
-## Objective
-
-Integrate Linux servers with Windows Server Active Directory and DNS to provide centralized identity, authentication, and name resolution.
-
-### Windows Server — Active Directory
-
-Configured Windows Server to provide:
-
-- Active Directory Domain Services (AD DS)
-- DNS
-- Domain users
-- Centralized authentication
-- Centralized identity management
-
-### DNS Configuration
-
-Configured the Linux servers to use the Active Directory DNS server.
-
-DNS functionality was tested using:
-
-- Forward DNS resolution
-- Reverse DNS resolution
-- Hostname resolution
-- Network connectivity
-
-### RHEL Domain Integration
-
-Integrated the RHEL server with the Windows Active Directory domain using:
-
-- realmd
-- SSSD
-- adcli
-- Kerberos
-
-The RHEL domain membership and authentication were verified after joining the domain.
-
-### Ubuntu Domain Integration
-
-Integrated the Ubuntu Linux server with the centralized domain environment using the same DNS and identity architecture.
-
-### Domain Users & Sudo
-
-Tested domain users on Linux and configured authorized administrative access through sudo.
-
-This provides centralized authentication while maintaining controlled administrative privileges.
-
----
-
-# 6. Task 2 — Web Infrastructure
-
-## Objective
-
-Deploy and configure web services on both RHEL and Ubuntu using Apache and Nginx.
-
-## RHEL — Apache
-
-Configured the RHEL server as an Apache HTTP Server.
-
-Implemented:
-
-- Installed Apache using the `httpd` package.
-- Configured custom web content.
-- Enabled and started Apache using systemd.
-- Configured firewalld for web traffic.
-- Allowed HTTP port 80.
-- Allowed HTTPS port 443.
-- Verified listening ports.
-- Tested HTTP response using `curl`.
-
-Example:
-
-```bash
-systemctl enable --now httpd
-curl http://localhost
 
 # 2. Project Objectives
 
-The main objectives of this project are:
-
-- Build and administer Linux servers in an enterprise-style environment.
-- Integrate Linux systems with Windows Active Directory.
-- Configure centralized DNS and authentication.
-- Deploy Apache and Nginx web servers.
-- Manage Linux users, groups, permissions, and ACLs.
-- Configure SSH and sudo access.
-- Configure firewalld and UFW.
-- Manage and inspect SELinux.
-- Monitor Linux services and web availability.
-- Analyze system and web logs.
-- Automate administration tasks using Bash.
-- Create and test web backups.
-- Automate backups using Cron.
-- Perform backup and restore operations.
-- Apply practical Linux troubleshooting techniques.
+[الجزء اللي كتبته بالفعل]
 
 ---
 
 # 3. Project Environment
 
-## Windows Server
-
-Provides:
-
-- Active Directory Domain Services (AD DS)
-- DNS
-- Domain users
-- Centralized authentication
-- Centralized identity management
-
-## RHEL Linux Server
-
-Provides:
-
-- Apache HTTP Server
-- Linux administration
-- firewalld
-- SELinux
-- SSH
-- Bash automation
-- Monitoring
-- Backup
-- Log analysis
-
-## Ubuntu Linux Server
-
-Provides:
-
-- Nginx Web Server
-- Linux administration
-- UFW firewall
-- SSH
-- Web service testing
-- Centralized authentication integration
+[Windows Server / RHEL / Ubuntu]
 
 ---
 
 # 4. Project Architecture
 
-The infrastructure follows a centralized enterprise-style architecture.
+[Architecture diagram]
 
-Windows Server provides centralized identity and DNS services, while RHEL and Ubuntu provide Linux-based web and administration services.
+---
 
-```text
-                    Windows Server
-                 Active Directory + DNS
-                         |
-              -------------------------
-              |                       |
-          RHEL Server             Ubuntu Server
-              |                       |
-           Apache                  Nginx
-              |                       |
-          firewalld                   UFW
-              |                       |
-           SELinux                  Linux
-              |
-        Bash Automation
-              |
-     Monitoring / Logs / Backup
+# 5. Task 1 — Infrastructure & Domain Integration
+
+## 5.1 Windows Server Configuration
+
+- Active Directory Domain Services
+- DNS Server
+- Forward Lookup Zone
+- Reverse Lookup Zone
+- Domain Users
+
+## 5.2 Linux Network & DNS Configuration
+
+- Static IP
+- Hostname
+- DNS configuration
+- Connectivity testing
+
+## 5.3 Linux Domain Integration
+
+- realmd
+- SSSD
+- adcli
+- Kerberos
+- RHEL domain join
+- Ubuntu domain join
+
+## 5.4 Domain Authentication
+
+- Domain users
+- Login testing
+- Sudo access for domain users
+
+---
+
+# 6. Task 2 — Web Infrastructure
+
+## 6.1 Apache Web Server — RHEL
+
+- Apache installation
+- Service configuration
+- Web page deployment
+- HTTP/HTTPS
+- Firewall configuration
+
+## 6.2 Nginx Web Server — Ubuntu
+
+- Nginx installation
+- Server Block configuration
+- Web page deployment
+- HTTP/HTTPS
+- UFW configuration
+
+## 6.3 Web Connectivity Testing
+
+- curl
+- Browser testing
+- Service status
+- Port verification
+
+---
+
+# 7. Task 3 — Linux Administration & Automation
+
+## 7.1 Linux Users & Groups
+
+## 7.2 Permissions & Ownership
+
+## 7.3 ACL
+
+## 7.4 Sudo
+
+## 7.5 SSH
+
+## 7.6 systemd & Services
+
+## 7.7 Package Management
+
+## 7.8 Networking & DNS
+
+## 7.9 Bash Scripting
+
+## 7.10 Service Monitoring
+
+[شرح الـservice-monitor.sh]
+
+Script:
+
+`../03-Scripts/service-monitor.sh`
+
+---
+
+# 8. Task 4 — Security, Monitoring, Logging & Backup
+
+## 8.1 Firewall Security
+
+- firewalld
+- UFW
+- Allowed services
+- Allowed ports
+- Unwanted traffic
+
+## 8.2 SELinux
+
+- SELinux modes
+- Security contexts
+- chcon
+- Verification
+
+## 8.3 System Monitoring
+
+- Service monitoring
+- Web availability
+- systemctl
+- Process and resource inspection
+
+## 8.4 Log Management
+
+- journalctl
+- System logs
+- Authentication logs
+- Apache logs
+- Nginx logs
+
+## 8.5 Backup
+
+- Web content backup
+- Archive and compression
+- Backup verification
+
+## 8.6 Restore
+
+- Restore procedure
+- Restore verification
+
+## 8.7 Cron Automation
+
+- Cron jobs
+- Scheduled backups
+- Job verification
+
+---
+
+# 9. Troubleshooting
+
+Document the main problems encountered during the project and how they were resolved.
+
+Examples:
+
+- DNS resolution problems
+- Domain join issues
+- Repository problems
+- Firewall configuration issues
+- SELinux permission issues
+- Service failures
+- Web server connectivity problems
+
+---
+
+# 10. Verification & Testing
+
+The project was verified through:
+
+- Service status checks
+- DNS resolution tests
+- Domain authentication tests
+- HTTP/HTTPS connectivity tests
+- Firewall verification
+- SELinux verification
+- Log inspection
+- Backup and restore testing
+- Bash script execution
+
+---
+
+# 11. Project Results
+
+The project successfully demonstrated the deployment and administration of an enterprise-style Linux environment integrated with Windows Active Directory.
+
+The implemented environment provides:
+
+- Centralized identity and authentication.
+- Linux web services using Apache and Nginx.
+- Linux administration and access control.
+- Firewall and SELinux security.
+- Monitoring and troubleshooting.
+- Bash-based automation.
+- Logging and operational visibility.
+- Backup, restore, and scheduled operations.
+
+---
+
+# 12. Skills Demonstrated
+
+- Linux System Administration
+- Red Hat Enterprise Linux
+- Ubuntu Linux
+- Windows Server
+- Active Directory
+- DNS
+- Apache
+- Nginx
+- SSH
+- Sudo
+- Permissions & ACL
+- firewalld
+- UFW
+- SELinux
+- Bash Scripting
+- systemd
+- Log Management
+- Cron
+- Backup & Restore
+- Linux Troubleshooting
