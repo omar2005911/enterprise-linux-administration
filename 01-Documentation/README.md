@@ -1,107 +1,162 @@
 # Enterprise Linux Administration & Automation
-# Project Documentation
 
-## Project Overview
+## Project Documentation
+
+---
+
+# 1. Project Overview
 
 This project is a hands-on Linux administration and operations environment designed to simulate a small enterprise infrastructure.
 
-The environment combines Windows Server, RHEL, and Ubuntu Linux servers and covers infrastructure configuration, domain integration, web services, Linux administration, security, automation, monitoring, logging, backup, and scheduled operations.
+The project combines:
 
----
-
-# Project Architecture
-
-The project consists of:
-
-- Windows Server providing Active Directory Domain Services and DNS.
-- RHEL Linux server running Apache HTTP Server.
-- Ubuntu Linux server running Nginx.
-- Linux administration and security controls.
-- Bash automation scripts.
-- Monitoring and log analysis.
-- Automated web backups using Cron.
+- Windows Server
+- RHEL Linux
+- Ubuntu Linux
+- Active Directory
+- DNS
+- Apache
+- Nginx
+- Linux security
+- Bash automation
+- Monitoring
+- Log analysis
+- Backup and restore
+- Cron scheduling
 
 The project follows a practical administration lifecycle:
 
-Infrastructure → Configuration → Security → Web Services → Monitoring → Automation → Backup → Restore
+Infrastructure → Domain Integration → Web Services → Linux Administration → Security → Automation → Monitoring → Backup → Operations
 
 ---
 
-# Task 1 — Infrastructure & Domain Integration
+# 2. Project Architecture
+
+The environment consists of:
+
+### Windows Server
+
+Provides:
+
+- Active Directory Domain Services (AD DS)
+- DNS
+- Domain users
+- Centralized authentication
+
+### RHEL Linux Server
+
+Provides:
+
+- Apache HTTP Server
+- Linux administration environment
+- firewalld
+- SELinux
+- Bash automation
+- Monitoring
+- Backup
+- Log analysis
+
+### Ubuntu Linux Server
+
+Provides:
+
+- Nginx Web Server
+- Linux administration environment
+- UFW firewall
+- Web service testing
+
+---
+
+# 3. Task 1 — Infrastructure & Domain Integration
 
 ## Objective
 
 Integrate Linux servers with a centralized Windows Server Active Directory and DNS environment.
 
-## Windows Server
+---
 
-The Windows Server environment was configured to provide:
+## 3.1 Windows Server — Active Directory
 
-- Active Directory Domain Services (AD DS)
+Windows Server was configured to provide centralized identity management using:
+
+- Active Directory Domain Services
 - DNS
 - Domain users
-- Centralized identity management
+- Centralized authentication
 
-## DNS Configuration
+The domain environment provides a central identity source for the Linux servers.
 
-Linux servers were configured to use the Active Directory DNS server.
+---
 
-DNS functionality was tested through:
+## 3.2 DNS Configuration
+
+DNS is a fundamental part of the domain environment.
+
+The Linux servers were configured to use the Active Directory DNS server.
+
+DNS functionality was tested using:
 
 - Forward DNS resolution
 - Reverse DNS resolution
 - Hostname resolution
 
-## RHEL Domain Integration
+Correct DNS configuration is required before joining Linux systems to the Active Directory domain.
+
+---
+
+## 3.3 RHEL Domain Integration
 
 The RHEL server was integrated with the Windows Active Directory domain.
 
-The domain integration process involved:
+The integration process involved:
 
 - DNS configuration
-- Required domain integration packages
 - realmd
 - SSSD
 - adcli
 - Kerberos
 - Domain join
-- Domain user authentication
+- Domain authentication
 
-Domain membership was verified after joining the server.
+The RHEL server domain membership was verified after the join operation.
 
-## Ubuntu Domain Integration
+---
 
-The Ubuntu Linux server was also prepared for integration with the centralized domain environment.
+## 3.4 Ubuntu Domain Integration
 
-The same identity and DNS architecture was used to provide centralized authentication.
+The Ubuntu Linux server was prepared for integration with the centralized domain environment.
 
-## Domain Users
+The same DNS and identity architecture was used to provide centralized authentication.
+
+---
+
+## 3.5 Domain Users
 
 Domain users were tested on the Linux environment.
 
 Administrative privileges were configured for authorized users through sudo.
 
+This allows centralized users to authenticate to Linux systems while maintaining controlled administrative access.
+
 ---
 
-# Task 2 — Web Infrastructure
+# 4. Task 2 — Web Infrastructure
 
 ## Objective
 
-Deploy and configure web servers on both RHEL and Ubuntu Linux servers.
+Deploy and configure web services on both RHEL and Ubuntu Linux servers.
 
 The project uses two different Linux distributions and two different web server technologies.
 
 ---
 
-## RHEL — Apache Web Server
+# 4.1 RHEL — Apache Web Server
 
 The RHEL server was configured as an Apache HTTP Server.
 
-### Apache Configuration
+Apache was installed using the `httpd` package.
 
-Apache was installed and configured using the `httpd` service.
-
-The service was enabled and started using systemd.
+The service was managed using systemd.
 
 Example:
 
