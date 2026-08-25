@@ -106,6 +106,9 @@ The architecture can be summarized as:
 
 ---
 
+
+
+
 # 5. Task 1 — Infrastructure & Domain Integration
 
 ## Objective
