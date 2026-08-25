@@ -33,6 +33,7 @@ The main objectives of this project are:
 - Automate administration tasks using Bash.
 - Create and test web backups.
 - Automate backups using Cron.
+- Perform backup and restore operations.
 - Apply practical Linux troubleshooting techniques.
 
 ---
@@ -72,6 +73,7 @@ Provides:
 - UFW firewall
 - SSH
 - Web service testing
+- Centralized authentication integration
 
 ---
 
@@ -98,31 +100,3 @@ Windows Server provides centralized identity and DNS services, while RHEL and Ub
         Bash Automation
               |
      Monitoring / Logs / Backup
----
-
-# 6. Task 2 — Web Infrastructure
-
-## Objective
-
-Deploy and configure web services on both RHEL and Ubuntu using Apache and Nginx.
-
-### RHEL — Apache
-
-Configured the RHEL server as an Apache HTTP Server.
-
-Implemented:
-
-- Installed `httpd`
-- Configured custom web content
-- Enabled and started Apache using systemd
-- Configured firewalld for web traffic
-- Allowed HTTP port 80
-- Allowed HTTPS port 443
-- Verified listening ports
-- Tested HTTP response using `curl`
-
-Example:
-
-```bash
-systemctl enable --now httpd
-curl http://localhost
