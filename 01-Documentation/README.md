@@ -97,7 +97,9 @@ Windows Server provides centralized identity and DNS services, while RHEL and Ub
               |
         Bash Automation
               |
-     Monitoring / Logs / Backup  ---
+     Monitoring / Logs / Backup
+---
+
 # 6. Task 2 — Web Infrastructure
 
 ## Objective
