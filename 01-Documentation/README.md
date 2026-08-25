@@ -103,3 +103,105 @@ The architecture can be summarized as:
         Bash Automation
               |
      Monitoring / Logs / Backup
+
+---
+
+# 5. Task 1 — Infrastructure & Domain Integration
+
+## Objective
+
+Integrate Linux servers with Windows Server Active Directory and DNS.
+
+### Implemented
+
+- Configured Active Directory Domain Services (AD DS).
+- Configured DNS and tested name resolution.
+- Configured Linux DNS settings.
+- Integrated the RHEL server with the domain.
+- Used realmd, SSSD, adcli, and Kerberos.
+- Verified domain membership and domain authentication.
+- Tested domain users and sudo access.
+
+---
+
+# 6. Task 2 — Web Infrastructure
+
+## Objective
+
+Deploy web services on RHEL and Ubuntu.
+
+### RHEL — Apache
+
+- Installed and configured Apache (`httpd`).
+- Created custom web content.
+- Enabled and started the Apache service.
+- Configured firewalld for web traffic.
+- Tested the website using `curl`.
+- Verified HTTP/HTTPS listening ports.
+
+### Ubuntu — Nginx
+
+- Installed and configured Nginx.
+- Configured web content.
+- Enabled and started the Nginx service.
+- Configured UFW for web traffic.
+- Tested the website using `curl`.
+
+---
+
+# 7. Task 3 — Linux Administration & Security
+
+## Objective
+
+Apply practical Linux administration and security operations.
+
+Implemented:
+
+- Users and groups management.
+- Password management.
+- File permissions and ownership.
+- ACL configuration.
+- Sudo administration.
+- SSH administration.
+- systemd service management.
+- firewalld configuration.
+- UFW configuration.
+- SELinux inspection and management.
+- Network and DNS troubleshooting.
+- Service and connectivity troubleshooting.
+
+---
+
+# 8. Task 4 — Automation & Operations
+
+## Objective
+
+Automate common administration and monitoring tasks using Bash.
+
+### Bash Scripts
+
+Developed scripts for:
+
+- Server health information.
+- Web/service monitoring.
+- Automated user creation.
+- Web backup.
+- Apache log analysis.
+
+### Monitoring
+
+The monitoring script checks:
+
+- `httpd`
+- `firewalld`
+- `sshd`
+- HTTP port 80
+- HTTPS port 443
+- HTTP response using `curl`
+
+### Backup & Restore
+
+The backup script creates compressed dated backups of:
+
+```text
+/var/www
